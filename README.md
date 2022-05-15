@@ -1,6 +1,6 @@
 # Watchlist
 
-Watchlist – is a very simple ***RESTful*** web-application. It runs with ***Spring Boot*** on the back-end and ***React*** on the front-end.
+Watchlist – is a very simple ***RESTful*** web-application. It runs with ***[Spring Boot](https://spring.io/projects/spring-boot)*** on the back-end and ***[React](https://reactjs.org/)*** on the front-end.
 
 If you want to try it out, read the installation guide below.
 
