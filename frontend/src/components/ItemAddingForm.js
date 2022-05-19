@@ -13,19 +13,13 @@ const ItemAddingForm = () => {
       .catch((error) => {
         if (error.response) {
           alert(error.response.data.message);
+          setName("");
         }
       });
   };
 
   const addItem = (e) => {
     e.preventDefault();
-
-    if (name.trim() === "") {
-      alert("Name cannot be empty!");
-      setName("");
-      return;
-    }
-
     addRequest({ name: name.trim() });
   };
 

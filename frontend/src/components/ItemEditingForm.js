@@ -16,19 +16,13 @@ const ItemEditingForm = () => {
       .catch((error) => {
         if (error.response) {
           alert(error.response.data.message);
+          setNewName("");
         }
       });
   };
 
   const editItem = (e) => {
     e.preventDefault();
-
-    if (newName.trim() === "") {
-      alert("Name cannot be empty!");
-      setNewName("");
-      return;
-    }
-
     editRequest({ ...item, name: newName.trim() });
   };
 

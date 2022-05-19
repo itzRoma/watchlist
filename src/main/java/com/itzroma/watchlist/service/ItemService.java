@@ -2,7 +2,7 @@ package com.itzroma.watchlist.service;
 
 import com.itzroma.watchlist.exception.ItemIsAlreadyExistsException;
 import com.itzroma.watchlist.exception.ItemNotFoundException;
-import com.itzroma.watchlist.exception.NameIsTakenException;
+import com.itzroma.watchlist.exception.ItemNameIsTakenException;
 import com.itzroma.watchlist.model.Item;
 import com.itzroma.watchlist.model.Status;
 import com.itzroma.watchlist.repository.ItemRepository;
@@ -35,7 +35,7 @@ public class ItemService {
 
     public Item edit(Item target, Item source) {
         if (!checkIfNameIsAvailable(source.getName()) && !source.getName().equals(target.getName()))
-            throw new NameIsTakenException(String.format("Name '%s' is taken!", source.getName()));
+            throw new ItemNameIsTakenException(String.format("Name '%s' is taken!", source.getName()));
 
         target.setName(source.getName());
         target.setStatus(source.getStatus());
